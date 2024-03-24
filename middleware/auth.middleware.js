@@ -1,12 +1,13 @@
 import jwt from "jsonwebtoken";
 import asyncHandler from "express-async-handler";
 import User from "../models/user.model.js";
+
   export  const protect = asyncHandler( async (req,res,next)=>{
     try {
          const token = req.cookies.token; 
          if(!token){
             res.status(401);
-            throw new Error("Not authorized, please login")
+            throw new Error("Not authenticated, please login")
 
          }
 
@@ -19,10 +20,10 @@ import User from "../models/user.model.js";
                     throw new Error("User not Found");
                  }
                  req.user = user
-                 next()
+                 next();
     } catch (error) {
         res.status(401);
-        throw new Error("Not authorized,please login")
+        throw new Error("Not authenticated,please login")
     }
 });
 
@@ -52,14 +53,6 @@ export const verifyToken = (req, res, next) => {
     }
   };
 
-//verify and authorization
-export const verifyTokenAndAuthorization = (req, res, next) => {
-    verifyToken(req, res, () => {
-      if (req.user.id === req.params.id || req.user.isAdmin) {
-        next();
-      } else {
-        res.status(403).json("You are not alowed to do that!");
-      }
-    });
-  };
+
+  
 

@@ -1,9 +1,9 @@
-# HotelRestApiTask11
+# HotelRestApiTask10Node2
 
 # Hotel Management API
 
 This is a simple Node.js Express API for managing hotel rooms.
-
+live link : [click for render live link of the project](https://hotelapitask10node2.onrender.com)
 ## Requirements
 
 - Node.js
@@ -11,7 +11,7 @@ This is a simple Node.js Express API for managing hotel rooms.
 
 ## Installation
 
-1. Clone the repository: [repo link...](https://github.com/solowiseCV/HotelApiTask11);
+1. Clone the repository: [repo link...](https://github.com/solowiseCV/HotelApiTAsk10Node2);
 
 
 2. Install dependencies: npm install
