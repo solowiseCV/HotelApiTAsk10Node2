@@ -7,7 +7,7 @@ import User from "../models/user.model.js";
          const token = req.cookies.token; 
          if(!token){
             res.status(401);
-            throw new Error("Not authenticated, please login")
+            throw new Error("Not authorized, please login")
 
          }
 
@@ -23,7 +23,7 @@ import User from "../models/user.model.js";
                  next();
     } catch (error) {
         res.status(401);
-        throw new Error("Not authenticated,please login")
+        throw new Error("Not authorized,please login")
     }
 });
 
